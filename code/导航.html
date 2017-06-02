@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title></title>
+	<link rel="stylesheet" href="../software/bootstrap/css/bootstrap.css">
+	<script type="text/javascript" src="../software/jquery.js"></script>
+	<script type="text/javascript" src="../software/bootstrap/js/bootstrap.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: 微软雅黑;
+		}
+		.row{
+			padding: 15px 15px;
+			display: none;
+		}
+	</style>
+</head>
+<body>	
+	<div class="container">
+		<h1 class="page-header">Bootstrap前端框架</h1>
+		
+		<ul class="nav nav-tabs">
+			<li class="active">
+				<a href="#">Linux</a>
+			</li>
+			<li class="">
+				<a href="#">Java</a>
+			</li>
+			<li class="">
+				<a href="#">Php</a>
+			</li>
+			<li class="">
+				<a href="#">C#</a>
+			</li>
+		</ul>
+
+		<div class="row">
+			<p>11111111111111111111111111111111111111111111111</p>
+		</div>
+		<div class="row">
+			<p>22222222222222222222222222222222222222</p>
+		</div>
+		<div class="row">
+			<p>333333333333333333333333333333333333</p>
+		</div>
+		<div class="row">
+			<p>44444444444444444444444444444444444444444444444</p>
+		</div>
+	</div>
+</body>
+<script>
+	$('li').mouseenter(function(){
+		$(this).addClass('active');
+		$('li').not($(this)).removeClass('active');
+
+		idx=$(this).index('li');
+		$('.row').eq(idx).show(100);
+		$('.row').not($('.row').eq(idx)).hide(100);
+	});
+	$('.row').eq(0).show();
+
+</script>
+</html>

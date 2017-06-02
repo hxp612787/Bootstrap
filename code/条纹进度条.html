@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title></title>
+	<link rel="stylesheet" href="../software/bootstrap/css/bootstrap.css">
+	<script type="text/javascript" src="../software/jquery.js"></script>
+	<script type="text/javascript" src="../software/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="../software/holder.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: 微软雅黑;
+		}
+		body{
+			padding-top: 30px;
+		}
+		a{
+			text-decoration: none;
+		}
+
+	</style>
+</head>
+<body>	
+	<div class="container">
+		<h1 class="page-header">Bootstrap前端框架</h1>
+		<div class="progress">
+			<div class="progress-bar progress-bar-striped active" style="width: 60%">60%</div>
+		</div>
+		<div class="progress">
+			<div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 0%">0%</div>
+		</div>
+		<div class="progress">
+			<div class="progress-bar  progress-bar-danger progress-bar-striped active" style="width: 60%">60%</div>
+		</div>
+		<div class="progress">
+			<div class="progress-bar progress-bar-success progress-bar-striped active" style="width: 60%">60%</div>
+		</div>
+
+	</div>
+</body>
+<script>
+s=0;
+v=2;
+
+	timer=setInterval(function(){
+	s+=v;
+	if(s>=100){
+		clearInterval(timer);
+	}
+	$('.progress-bar-info').html(s+'%').css({'width':s+'%'});
+},300)
+</script>
+</html>

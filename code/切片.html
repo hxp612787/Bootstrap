@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{
+			font-family: 微软雅黑;
+			padding: 0;
+			margin: 0;
+		}
+		.div1{
+			width: 470px;
+			height: 293px;
+			margin: 0 auto;
+			background: orange;
+			position: relative;
+		}
+		ul{
+			z-index: 1;
+		}
+		ol{
+			position: absolute;
+			width: 160px;
+			height:30px;
+			z-index: 2;
+			right: 10px;
+			bottom: 10px;
+		}
+		ol li{
+				margin: 0 5px;
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				background: red;
+		}
+		ul,ol{
+			list-style: none;
+			text-align: center;
+		}
+		ul li{
+			display: none;
+		}
+		ol li{
+			float: left;
+		}
+		ol li:hover{
+			cursor: pointer;
+		}
+		.active{
+			background: yellow;
+			color:#cce
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oUl=document.getElementsByTagName('ul')[0];
+			var aLiUl=oUl.getElementsByTagName('li');
+
+			var oOl=document.getElementsByTagName('ol')[0];
+			var aLiOl=oOl.getElementsByTagName('li');
+
+			for(var i=0;i<aLiOl.length;i++){
+
+				aLiOl[i].index=i;
+				aLiOl[i].onmouseover=function(){
+					for(var i=0;i<aLiOl.length;i++){
+						aLiOl[i].className='';
+						aLiUl[i].style.display='none';
+					}
+					this.className="active";
+					aLiUl[this.index].style.display="block";
+				}
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<div class="div1">
+		<ul>
+			<li style="display: block;"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494085420287&di=61f28691f1af293b4d804f3e197f37eb&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F838ba61ea8d3fd1f2e74ab37384e251f95ca5fb9.jpg" alt=""></li>
+			<li><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494085420286&di=caa8fca4a07fbcef45b23bc9c7fd426c&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F0824ab18972bd407223e246773899e510eb309aa.jpg" alt=""</li>
+			<li><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494085420285&di=5ebf1aaae83455717909b7a80364d7d8&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fb7fd5266d0160924e03b1c39dc0735fae6cd34f1.jpg" alt=""</li>
+			<li><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3385582289,557413662&fm=23&gp=0.jpg" alt=""</li>
+		</ul>
+		<ol>
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ol>
+	</div>
+</body>
+</html>
